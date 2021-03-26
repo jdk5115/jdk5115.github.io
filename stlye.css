@@ -5,6 +5,30 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 font-style: normal;
 }
 
+.education {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0 5px;
+  color: rgba(39, 147, 155, 0.979);
+  background-color: white;
+  text-align: center;
+  overflow: auto;
+  font-size: 32px;
+}
+
+.edlist{
+    float: left;
+    text-decoration: none;
+    width: 100%; 
+    text-align: center;
+    display: inline;
+    background-color:  rgba(39,147,155,0.979);
+    color:white;
+
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -20,7 +44,6 @@ font-style: normal;
 .footer a{
     float: left;
     text-decoration: none;
-
     width: 20%; 
     text-align: center;
 }
