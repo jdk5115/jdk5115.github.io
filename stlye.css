@@ -5,28 +5,48 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 font-style: normal;
 }
 
-.education {
+html, body{
+  margin: 0;
+  padding: 0;
+}
+.section-header {
   position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 5px 0 5px;
   color: rgba(39, 147, 155, 0.979);
   background-color: white;
   text-align: center;
   overflow: auto;
+  display: inline;
   font-size: 32px;
 }
 
-.edlist{
-    float: left;
+div ul{
+  list-style: none;
+  right: 0;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  text-align: center;
+}
+
+
+div ul li{
+    padding: 0px 50px 0px;
+    margin: 0;
+    overflow: auto;
+    text-align: center;
     text-decoration: none;
     width: 100%; 
-    text-align: center;
-    display: inline;
     background-color:  rgba(39,147,155,0.979);
     color:white;
+    font-size: 32px;
+    display: inline-block;
+}
 
+div ul li a{
+  text-decoration: none;
 }
 
 .footer {
@@ -41,18 +61,29 @@ font-style: normal;
   overflow: auto;
 }
 
+.project{
+  margin-bottom: 150px;
+}
+
 .footer a{
     float: left;
     text-decoration: none;
     width: 20%; 
     text-align: center;
+    min-height: 100%;
 }
 
 @media screen and (max-width: 500px) {
-    .footer-links a {
+    .footer-links a, div ul li a {
       float: none;
       display: block;
       width: 100%;
       text-align: left; /* If you want the text to be left-aligned on small screens */
+    }
+    div ul li a{
+      font-size: 20px;
+      float: none;
+      display: block;
+      width: 100%;
     }
 }
