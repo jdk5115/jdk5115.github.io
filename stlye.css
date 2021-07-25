@@ -14,7 +14,7 @@ html, body{
   left: 0;
   bottom: 0;
   width: 100%;
-  color: rgba(108, 221, 159, 0.979);
+  color: rgba(126, 126, 126, 0.979);
   background-color: white;
   text-align: center;
   overflow: auto;
@@ -39,7 +39,7 @@ div ul li{
     text-align: center;
     text-decoration: none;
     width: 100%; 
-    background-color:  rgba(108, 221, 159, 0.979);
+    background-color:  rgba(126, 126, 126, 0.979);
     color:white;
     font-size: 32px;
     display: inline-block;

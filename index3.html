@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style3.css">
+<script src="https://kit.fontawesome.com/acfdf74f55.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="hero-text">
+        <h1>Jonathan Kelly</h1>
+        <p>Data Scientist</p>
+        </div>
+    </div>
+    <section class="content">
+        <p>
+        
+        My name is Jonathan Kelly and I'm a data scientist who loves to learn new things. <br>
+        I currently live in Toronto with the legal right to work in both the US and Canada. <br>
+        On this site you'll find a few things about my work experience, examples of projects I've worked on and my contact information.  <br>
+        Feel free to reach out for any reason.  Cheers.
+        </p>
+    </section>
+
+    <div class="content">
+    <h2>CSS Template</h2>
+    <p>A full-height, fixed sidenav and content.</p>
+    </div>
+
+    <div class="content">
+        <h2>Education + Certificates</h2>
+    </div>
+
+    <div class="content">
+        <ul>
+            <li>
+            <a href="/images/bachelors.jpg" src="/images/bachelors.jpg" style="color: rgb(104, 101, 101);">
+                <p>Bachelor of Engineering</p>
+            </a>
+            </li>
+            <li>
+            <a href="/images/MBA.jpg" style="color: rgb(104, 101, 101);">
+                <p>Master of Business Administration</p>
+            </a>
+            </li>
+            <li>
+            <a href="/images/pmpcert.jpg" src="/images/bachelors.jpg" style="color: rgb(104, 101, 101);">
+                <p>Project Management Professional</p>
+            </a>
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="contents">Animated Collapsibles </h2>
+
+    <p class="contents">A Collapsible:</p>
+    <button class="collapsible">My Jobs</button>
+    <div class="contents">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    
+    <p class="contents">Collapsible Set:</p>
+    <button class="collapsible">Job 1</button>
+    <div class="contents">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="collapsible">Job 2</button>
+    <div class="contents">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="collapsible">Job 3</button>
+    <div class="contents">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button class="collapsible">Job 4</button>
+    <div class="contents">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button class="collapsible">Job 5</button>
+    <div class="contents">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button class="collapsible">Job 6</button>
+    <div class="contents">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+    <div class="sidenav">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+
+    
+    <div class="sidenav">
+    
+        <a href="https://www.linkedin.com/in/jonathankellymba/" target="_blank">
+            <div i class="fa fa-linkedin-square" style="font-size:48px;color:white" aria-hidden="true"></div>
+        </a>
+
+        <a href="mailto:jdk5115@gmail.com" target="_blank">
+            <div i class="fa fa-envelope" style="font-size:48px;color:white" aria-hidden="true"></div>
+        </a>
+
+        <a href="https://github.com/jdk5115" target="_blank">
+        <div i class="fa fa-github" style="font-size:48px;color:white" aria-hidden="true"></div>
+        </a>
+    
+        <a href="https://www.kaggle.com/jdk5115" target="_blank">
+        <div i class="fab fa-kaggle" style="font-size:48px;color:white" aria-hidden="true"></div>
+        </a>
+
+        <a href="https://jdk5115.medium.com/" target="_blank">
+            <div i class="fab fa-medium" style="font-size:48px;color:white" aria-hidden="true"></div>
+        </a>
+
+        <a href="resume" target="_blank">
+            <div i class="fas fa-file" style="font-size:48px;color:white" aria-hidden="true"></div>
+        </a>
+
+    </div>
+</body>
+</html>

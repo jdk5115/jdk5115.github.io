@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  padding-left: 26px;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: rgb(33, 77, 105);
+  color: black;
+}
+
+/* Style the content */
+.content {
+  margin-left: 100px;
+  padding-left: 20px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0 5px;
+  background-color: rgba(212, 26, 26, 0.774);
+  color: white;
+  text-align: center;
+  overflow: auto;
+}
+
+.footer a{
+  float: left;
+  text-decoration: none;
+  width: 6%; 
+  text-align: center;
+  min-height: 100%;
+  margin-left: 200px;
+  padding-left: 20px;
+}
+
+.collapsible {
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-left: 100px;
+  padding-left: 20px;
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(33, 77, 105);
+
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  margin-left: 100px;
+  padding-left: 20px;
+}
+
+.active:after {
+  content: "\2212";
+  margin-left: 100px;
+  padding-left: 20px;
+}
+
+.contents {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background-color: #ffffff;
+  margin-left: 100px;
+  padding-left: 20px;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    .footer-links a, div ul li a {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left; /* If you want the text to be left-aligned on small screens */
+    }
+    div ul li a{
+      font-size: 20px;
+      float: none;
+      display: block;
+      width: 100%;
+    }
+}
