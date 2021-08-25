@@ -16,7 +16,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #12151F;
   overflow-x: hidden;
 }
 
@@ -32,8 +32,8 @@ body {
 
 /* Change color on hover */
 .sidenav a:hover {
-  background-color: rgb(33, 77, 105);
-  color: black;
+  background-color: #371BB1;
+  color: #12151F;
 }
 
 /* Style the content */
@@ -64,7 +64,7 @@ body {
 }
 
 .collapsible {
-  background-color: #111;
+  background-color: #12151F;
   color: white;
   cursor: pointer;
   padding: 18px;
@@ -78,7 +78,7 @@ body {
 }
 
 .active, .collapsible:hover {
-  background-color: rgb(33, 77, 105);
+  background-color: #371BB1;
 
 }
 
@@ -103,7 +103,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out;
-  background-color: #ffffff;
+  background-color: #05F4B7;
   margin-left: 100px;
   padding-left: 20px;
 }
