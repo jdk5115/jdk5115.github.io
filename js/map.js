@@ -42,10 +42,11 @@ function add3dBuildings() {
       paint: {
         "fill-extrusion-color": [
           "interpolate", ["linear"], ["coalesce", ["get", "render_height"], 0],
-          0, "#2a3b5e",
+          0, "#ccd8ec",
           50, "#29b5e8",
           150, "#7c5cff",
-          300, "#f5b942",
+          250, "#ec4d9b",
+          350, "#ff8a3d",
         ],
         "fill-extrusion-height": [
           "interpolate", ["linear"], ["zoom"],
@@ -106,4 +107,4 @@ document.getElementById("spin-btn").addEventListener("click", function () {
   if (orbiting) orbit();
   else stopOrbit();
 });
-map.on("mousedown", stopOrbit);
+map.on
