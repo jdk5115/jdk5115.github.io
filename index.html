@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonathan Kelly — Data &amp; AI Consulting | Snowflake Expert</title>
+  <meta name="description" content="Snowflake-centric data engineering, schema architecture, and enterprise AI architecture consulting. SnowPro SME certified. Book a call." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#top">Jonathan <span>Kelly</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#patterns">Architecture</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#book" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="eyebrow">Data Engineering · AI · Architecture</div>
+    <h1>From raw data to <span class="grad">production AI</span> — designed end to end.</h1>
+    <p class="lead">
+      I'm Jonathan Kelly, a Snowflake-certified data and AI architect. I help teams design,
+      build, and ship the complete product: pipelines, schemas, orchestration, and
+      enterprise AI systems — Snowflake-centric, cloud-agnostic, Azure-fluent.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#book">Book a Call</a>
+      <a class="btn btn-outline" href="#demo">See a Live Demo</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge sme">&#10022; SnowPro SME</span>
+      <span class="badge">SnowPro Advanced: Data Architect</span>
+      <span class="badge">SnowPro Advanced: Data Engineer</span>
+      <span class="badge">SnowPro Core</span>
+      <span class="badge">Azure AI Engineer</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="container">
+    <div class="eyebrow">What I Do</div>
+    <h2>End-to-end, from first ingest to shipped product</h2>
+    <p class="section-sub">
+      Most consultants hand you a diagram and leave. I work across the full lifecycle —
+      designing the architecture, building the pipelines, and staying through deployment
+      so what we design actually ships.
+    </p>
+    <div class="grid grid-4">
+      <div class="card">
+        <span class="icon">&#129704;</span>
+        <h3>Data Pipelines &amp; Orchestration</h3>
+        <p>Reliable, observable ELT built on Snowflake — Snowpipe, Streams &amp; Tasks, Dynamic Tables — orchestrated with the tool that fits your team.</p>
+        <ul>
+          <li>Batch &amp; streaming ingestion</li>
+          <li>dbt modeling &amp; testing</li>
+          <li>Airflow / Dagster / ADF orchestration</li>
+          <li>Pipeline rescue &amp; cost tuning</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">&#128202;</span>
+        <h3>Schema &amp; Data Architecture</h3>
+        <p>Schemas that survive contact with the business. Dimensional, Data Vault, or wide — chosen for your query patterns, not fashion.</p>
+        <ul>
+          <li>Warehouse &amp; lakehouse design</li>
+          <li>Medallion layering done right</li>
+          <li>Data contracts &amp; governance</li>
+          <li>Snowflake RBAC &amp; cost architecture</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">&#129302;</span>
+        <h3>Enterprise AI Architecture</h3>
+        <p>AI that runs where your data lives. RAG, agents, and ML systems grounded in governed warehouse data — not bolted on beside it.</p>
+        <ul>
+          <li>RAG &amp; Cortex AI on Snowflake</li>
+          <li>Azure OpenAI / AI Foundry integration</li>
+          <li>LLM evaluation &amp; guardrails</li>
+          <li>AI readiness assessments</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">&#128640;</span>
+        <h3>End-to-End Product Delivery</h3>
+        <p>Take a data or AI product from idea to production: requirements, architecture, build, deployment, and handoff to your team.</p>
+        <ul>
+          <li>Greenfield platform builds</li>
+          <li>Migration to Snowflake</li>
+          <li>Architecture reviews</li>
+          <li>Team enablement &amp; handoff</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section id="book" class="alt">
+  <div class="container">
+    <div class="eyebrow">Work With Me</div>
+    <h2>Book time, pay upfront, get answers</h2>
+    <p class="section-sub">
+      All technical calls are prepaid. Not sure where to start? The free intro call is a
+      non-technical conversation — I explain how the process works and you ask high-level questions.
+    </p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="duration">15 minutes · Non-technical</div>
+        <div class="price">Free</div>
+        <p class="desc">
+          An introductory call to explain my process, scope your problem at a high level,
+          and decide whether we're a fit. No technical deep-dives — just orientation
+          and your big-picture questions.
+        </p>
+        <button class="btn btn-outline book-btn" data-cal="intro-15">Book Intro Call</button>
+      </div>
+      <div class="price-card featured">
+        <span class="tag">Most Popular</span>
+        <div class="duration">30 minutes · Technical</div>
+        <div class="price">$100</div>
+        <p class="desc">
+          A focused working session. Bring a specific problem — a pipeline that's failing,
+          a schema decision, a Snowflake cost spike, an AI design question — and we solve it together.
+        </p>
+        <button class="btn btn-primary book-btn" data-cal="technical-30">Book 30 Min</button>
+        <div class="note">Payment collected at booking</div>
+      </div>
+      <div class="price-card">
+        <div class="duration">60 minutes · Technical</div>
+        <div class="price">$200</div>
+        <p class="desc">
+          A deep-dive session for bigger questions: architecture reviews, migration planning,
+          AI system design, or working through an end-to-end product roadmap.
+        </p>
+        <button class="btn btn-outline book-btn" data-cal="technical-60">Book 60 Min</button>
+        <div class="note">Payment collected at booking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIVE DEMO ============ -->
+<section id="demo">
+  <div class="container">
+    <div class="eyebrow">Live Demo</div>
+    <h2>Interactive geospatial analytics</h2>
+    <p class="section-sub">
+      A taste of what modern data tooling can do — a fully interactive 3D city map running
+      on open data (OpenStreetMap), rendered live in your browser. The same techniques power
+      geospatial analytics in Snowflake with GEOGRAPHY types, H3 indexing, and Streamlit apps.
+    </p>
+    <div class="map-controls">
+      <button class="map-btn active" data-city="nyc">New York</button>
+      <button class="map-btn" data-city="chicago">Chicago</button>
+      <button class="map-btn" data-city="philly">Philadelphia</button>
+      <button class="map-btn" data-city="seattle">Seattle</button>
+      <button class="map-btn" id="toggle-3d">Toggle 3D Buildings</button>
+      <button class="map-btn" id="spin-btn">Orbit View</button>
+    </div>
+    <div id="map"></div>
+    <p class="map-caption">
+      Built with MapLibre GL JS + OpenFreeMap vector tiles (OpenStreetMap data). Click and drag to pan,
+      right-click-drag to rotate, scroll to zoom. Buildings extrude in 3D at street zoom levels.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE PATTERNS ============ -->
+<section id="patterns" class="alt">
+  <div class="container">
+    <div class="eyebrow">Architecture Patterns</div>
+    <h2>Patterns I design and build</h2>
+    <p class="section-sub">
+      Every engagement starts with the right pattern for your data shape, latency needs, and team.
+      Here are four I implement most often — all Snowflake-centric, all cloud-agnostic.
+    </p>
+
+    <div class="pattern-tabs">
+      <button class="pattern-tab active" data-panel="medallion">Medallion ELT</button>
+      <button class="pattern-tab" data-panel="streaming">Streaming Ingest</button>
+      <button class="pattern-tab" data-panel="rag">Enterprise AI / RAG</button>
+      <button class="pattern-tab" data-panel="azure">Azure + Snowflake</button>
+    </div>
+
+    <div class="pattern-panel active" id="panel-medallion">
+      <div class="diagram">
+        <svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+          <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#9fb0cc"/></marker></defs>
+          <rect x="10" y="90" width="80" height="56" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="50" y="114" fill="#e8eefb" font-size="11" text-anchor="middle">Sources</text>
+          <text x="50" y="130" fill="#9fb0cc" font-size="9" text-anchor="middle">SaaS · DBs · Files</text>
+          <rect x="120" y="90" width="80" height="56" rx="8" fill="#3c2b14" stroke="#cd7f32"/>
+          <text x="160" y="114" fill="#e8a35c" font-size="11" text-anchor="middle" font-weight="600">Bronze</text>
+          <text x="160" y="130" fill="#9fb0cc" font-size="9" text-anchor="middle">Raw, immutable</text>
+          <rect x="230" y="90" width="80" height="56" rx="8" fill="#2a2f3a" stroke="#a8b4c4"/>
+          <text x="270" y="114" fill="#cfd8e6" font-size="11" text-anchor="middle" font-weight="600">Silver</text>
+          <text x="270" y="130" fill="#9fb0cc" font-size="9" text-anchor="middle">Cleansed, conformed</text>
+          <rect x="340" y="90" width="80" height="56" rx="8" fill="#3a2f14" stroke="#f5b942"/>
+          <text x="380" y="114" fill="#f5b942" font-size="11" text-anchor="middle" font-weight="600">Gold</text>
+          <text x="380" y="130" fill="#9fb0cc" font-size="9" text-anchor="middle">Business marts</text>
+          <line x1="90" y1="118" x2="116" y2="118" stroke="#9fb0cc" marker-end="url(#arr)"/>
+          <line x1="200" y1="118" x2="226" y2="118" stroke="#9fb0cc" marker-end="url(#arr)"/>
+          <line x1="310" y1="118" x2="336" y2="118" stroke="#9fb0cc" marker-end="url(#arr)"/>
+          <text x="230" y="40" fill="#29b5e8" font-size="12" text-anchor="middle" font-weight="600">Snowflake · dbt · Dynamic Tables</text>
+          <line x1="230" y1="48" x2="230" y2="84" stroke="#29b5e8" stroke-dasharray="3,3"/>
+          <text x="230" y="205" fill="#9fb0cc" font-size="10" text-anchor="middle">BI · Data Apps · ML Features · Reverse ETL</text>
+          <line x1="380" y1="146" x2="300" y2="192" stroke="#9fb0cc" stroke-dasharray="3,3" marker-end="url(#arr)"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Medallion ELT on Snowflake</h3>
+        <p>
+          Land raw data in Bronze untouched, conform and test it in Silver, and serve business-ready
+          marts from Gold. Implemented with dbt or Dynamic Tables so every layer is versioned,
+          tested, and rebuildable from raw.
+        </p>
+        <p class="when"><strong>When it fits:</strong> analytics platforms, multi-source consolidation, teams that need auditability and the ability to replay history.</p>
+      </div>
+    </div>
+
+    <div class="pattern-panel" id="panel-streaming">
+      <div class="diagram">
+        <svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+          <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#9fb0cc"/></marker></defs>
+          <rect x="10" y="30" width="90" height="44" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="55" y="56" fill="#e8eefb" font-size="10" text-anchor="middle">Events / IoT</text>
+          <rect x="10" y="100" width="90" height="44" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="55" y="126" fill="#e8eefb" font-size="10" text-anchor="middle">CDC (DBs)</text>
+          <rect x="10" y="170" width="90" height="44" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="55" y="196" fill="#e8eefb" font-size="10" text-anchor="middle">Files / Blob</text>
+          <rect x="140" y="100" width="100" height="44" rx="8" fill="#1a2e42" stroke="#29b5e8"/>
+          <text x="190" y="119" fill="#29b5e8" font-size="10" text-anchor="middle" font-weight="600">Kafka / Event Hubs</text>
+          <text x="190" y="133" fill="#9fb0cc" font-size="9" text-anchor="middle">+ Snowpipe Streaming</text>
+          <rect x="280" y="80" width="110" height="84" rx="8" fill="#0e2a3d" stroke="#29b5e8" stroke-width="1.5"/>
+          <text x="335" y="106" fill="#29b5e8" font-size="11" text-anchor="middle" font-weight="700">Snowflake</text>
+          <text x="335" y="124" fill="#9fb0cc" font-size="9" text-anchor="middle">Streams &amp; Tasks</text>
+          <text x="335" y="138" fill="#9fb0cc" font-size="9" text-anchor="middle">Dynamic Tables</text>
+          <text x="335" y="152" fill="#9fb0cc" font-size="9" text-anchor="middle">&lt; 1 min latency</text>
+          <line x1="100" y1="52" x2="136" y2="112" stroke="#9fb0cc" marker-end="url(#arr2)"/>
+          <line x1="100" y1="122" x2="136" y2="122" stroke="#9fb0cc" marker-end="url(#arr2)"/>
+          <line x1="100" y1="192" x2="136" y2="132" stroke="#9fb0cc" marker-end="url(#arr2)"/>
+          <line x1="240" y1="122" x2="276" y2="122" stroke="#9fb0cc" marker-end="url(#arr2)"/>
+          <rect x="410" y="100" width="44" height="44" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="432" y="119" fill="#e8eefb" font-size="9" text-anchor="middle">Live</text>
+          <text x="432" y="131" fill="#e8eefb" font-size="9" text-anchor="middle">Apps</text>
+          <line x1="390" y1="122" x2="406" y2="122" stroke="#9fb0cc" marker-end="url(#arr2)"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Near-Real-Time Streaming Ingest</h3>
+        <p>
+          Events, CDC feeds, and file drops flow through Kafka or Azure Event Hubs into Snowflake
+          via Snowpipe Streaming, with Streams &amp; Tasks or Dynamic Tables transforming continuously.
+          Minute-level freshness without managing Spark clusters.
+        </p>
+        <p class="when"><strong>When it fits:</strong> operational dashboards, fraud/anomaly detection, IoT telemetry, CDC replication from transactional systems.</p>
+      </div>
+    </div>
+
+    <div class="pattern-panel" id="panel-rag">
+      <div class="diagram">
+        <svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+          <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#9fb0cc"/></marker></defs>
+          <rect x="10" y="95" width="85" height="50" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="52" y="116" fill="#e8eefb" font-size="10" text-anchor="middle">Docs + Tables</text>
+          <text x="52" y="130" fill="#9fb0cc" font-size="9" text-anchor="middle">governed data</text>
+          <rect x="125" y="95" width="95" height="50" rx="8" fill="#0e2a3d" stroke="#29b5e8"/>
+          <text x="172" y="113" fill="#29b5e8" font-size="10" text-anchor="middle" font-weight="600">Cortex Search</text>
+          <text x="172" y="127" fill="#9fb0cc" font-size="9" text-anchor="middle">embeddings + hybrid</text>
+          <rect x="250" y="95" width="95" height="50" rx="8" fill="#241a42" stroke="#7c5cff"/>
+          <text x="297" y="113" fill="#a78bff" font-size="10" text-anchor="middle" font-weight="600">LLM Layer</text>
+          <text x="297" y="127" fill="#9fb0cc" font-size="9" text-anchor="middle">Cortex / Azure OpenAI</text>
+          <rect x="375" y="95" width="75" height="50" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="412" y="113" fill="#e8eefb" font-size="10" text-anchor="middle">Apps &amp;</text>
+          <text x="412" y="127" fill="#e8eefb" font-size="10" text-anchor="middle">Agents</text>
+          <line x1="95" y1="120" x2="121" y2="120" stroke="#9fb0cc" marker-end="url(#arr3)"/>
+          <line x1="220" y1="120" x2="246" y2="120" stroke="#9fb0cc" marker-end="url(#arr3)"/>
+          <line x1="345" y1="120" x2="371" y2="120" stroke="#9fb0cc" marker-end="url(#arr3)"/>
+          <rect x="125" y="180" width="220" height="36" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="235" y="202" fill="#9fb0cc" font-size="10" text-anchor="middle">Evaluation · Guardrails · RBAC · Observability</text>
+          <line x1="235" y1="176" x2="235" y2="150" stroke="#9fb0cc" stroke-dasharray="3,3"/>
+          <text x="235" y="40" fill="#29b5e8" font-size="11" text-anchor="middle" font-weight="600">AI runs where the data lives — no copies, full governance</text>
+        </svg>
+      </div>
+      <div>
+        <h3>Enterprise AI / RAG Architecture</h3>
+        <p>
+          Retrieval-augmented generation grounded in your governed warehouse: Cortex Search over
+          documents and structured data, an LLM layer (Snowflake Cortex or Azure OpenAI), and an
+          evaluation + guardrail loop so quality is measured, not assumed. Row-level security carries
+          straight through to AI answers.
+        </p>
+        <p class="when"><strong>When it fits:</strong> internal knowledge assistants, analyst copilots, customer-facing AI grounded in your data, agentic workflows over warehouse data.</p>
+      </div>
+    </div>
+
+    <div class="pattern-panel" id="panel-azure">
+      <div class="diagram">
+        <svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+          <defs><marker id="arr4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#9fb0cc"/></marker></defs>
+          <rect x="8" y="20" width="444" height="200" rx="10" fill="none" stroke="#243353" stroke-dasharray="4,4"/>
+          <text x="30" y="42" fill="#9fb0cc" font-size="9">AZURE TENANT</text>
+          <rect x="25" y="60" width="90" height="46" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="70" y="80" fill="#e8eefb" font-size="10" text-anchor="middle">ADF / Functions</text>
+          <text x="70" y="94" fill="#9fb0cc" font-size="9" text-anchor="middle">ingestion</text>
+          <rect x="25" y="140" width="90" height="46" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="70" y="160" fill="#e8eefb" font-size="10" text-anchor="middle">ADLS Gen2</text>
+          <text x="70" y="174" fill="#9fb0cc" font-size="9" text-anchor="middle">landing zone</text>
+          <rect x="160" y="95" width="120" height="60" rx="8" fill="#0e2a3d" stroke="#29b5e8" stroke-width="1.5"/>
+          <text x="220" y="118" fill="#29b5e8" font-size="12" text-anchor="middle" font-weight="700">Snowflake</text>
+          <text x="220" y="134" fill="#9fb0cc" font-size="9" text-anchor="middle">on Azure · private link</text>
+          <text x="220" y="146" fill="#9fb0cc" font-size="9" text-anchor="middle">Entra ID SSO</text>
+          <rect x="325" y="60" width="105" height="46" rx="8" fill="#241a42" stroke="#7c5cff"/>
+          <text x="377" y="80" fill="#a78bff" font-size="10" text-anchor="middle">Azure OpenAI</text>
+          <text x="377" y="94" fill="#9fb0cc" font-size="9" text-anchor="middle">AI Foundry</text>
+          <rect x="325" y="140" width="105" height="46" rx="8" fill="#16223a" stroke="#243353"/>
+          <text x="377" y="160" fill="#e8eefb" font-size="10" text-anchor="middle">Power BI</text>
+          <text x="377" y="174" fill="#9fb0cc" font-size="9" text-anchor="middle">+ Streamlit apps</text>
+          <line x1="115" y1="83" x2="156" y2="110" stroke="#9fb0cc" marker-end="url(#arr4)"/>
+          <line x1="115" y1="163" x2="156" y2="140" stroke="#9fb0cc" marker-end="url(#arr4)"/>
+          <line x1="280" y1="110" x2="321" y2="86" stroke="#9fb0cc" marker-end="url(#arr4)"/>
+          <line x1="280" y1="140" x2="321" y2="160" stroke="#9fb0cc" marker-end="url(#arr4)"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Azure + Snowflake Reference Architecture</h3>
+        <p>
+          My preferred enterprise stack: Azure Data Factory or Functions for ingestion, ADLS Gen2
+          landing, Snowflake on Azure behind Private Link with Entra ID SSO, Azure OpenAI for the
+          AI layer, Power BI and Streamlit for consumption. Cloud-agnostic by design — the same
+          pattern maps cleanly to AWS or GCP.
+        </p>
+        <p class="when"><strong>When it fits:</strong> Microsoft-shop enterprises, regulated environments needing private networking, teams consolidating onto Azure + Snowflake.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section id="stack">
+  <div class="container">
+    <div class="eyebrow">Tooling</div>
+    <h2>The stack I work in</h2>
+    <p class="section-sub">
+      Snowflake at the center, with best-of-breed tools around it. I recommend what fits your
+      team and budget — including replacing tools you're overpaying for.
+    </p>
+    <div class="stack-grid">
+      <div class="stack-item"><div class="name">Snowflake</div><div class="role">Data platform, Cortex AI, Snowpark, Streamlit</div></div>
+      <div class="stack-item"><div class="name">Microsoft Azure</div><div class="role">ADF, ADLS, Functions, Event Hubs, Azure OpenAI</div></div>
+      <div class="stack-item"><div class="name">dbt</div><div class="role">Transformation, testing, documentation</div></div>
+      <div class="stack-item"><div class="name">Python</div><div class="role">Pipelines, Snowpark, APIs, ML</div></div>
+      <div class="stack-item"><div class="name">Airflow / Dagster</div><div class="role">Orchestration &amp; scheduling</div></div>
+      <div class="stack-item"><div class="name">Fivetran / Airbyte</div><div class="role">Managed connector ingestion</div></div>
+      <div class="stack-item"><div class="name">Kafka / Event Hubs</div><div class="role">Streaming &amp; CDC backbone</div></div>
+      <div class="stack-item"><div class="name">Power BI / Tableau</div><div class="role">BI &amp; semantic layers</div></div>
+      <div class="stack-item"><div class="name">Azure OpenAI / OpenAI</div><div class="role">LLMs, embeddings, agents</div></div>
+      <div class="stack-item"><div class="name">Terraform</div><div class="role">Infrastructure as code</div></div>
+      <div class="stack-item"><div class="name">GitHub Actions / Azure DevOps</div><div class="role">CI/CD for data &amp; AI</div></div>
+      <div class="stack-item"><div class="name">Streamlit</div><div class="role">Data apps on Snowflake</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="alt">
+  <div class="container">
+    <div class="eyebrow">About</div>
+    <h2>Jonathan Kelly</h2>
+    <div class="about-grid">
+      <div>
+        <p class="section-sub" style="margin-bottom:18px">
+          I'm a data engineer and architect who builds on Snowflake every day. Over [X] years
+          I've designed and shipped data platforms, pipelines, and AI systems for
+          [industries/companies — placeholder], working across the full stack from ingestion
+          to the dashboards and AI apps executives actually use.
+        </p>
+        <p class="section-sub" style="margin-bottom:18px">
+          I hold the <strong>SnowPro SME</strong> distinction — awarded to a small group of
+          subject-matter experts who help author and review Snowflake's own certification
+          exams — alongside both SnowPro Advanced certifications and Microsoft's Azure AI
+          Engineer certification. Snowflake is my specialty; Azure is my home cloud; the
+          architecture is always cloud-agnostic.
+        </p>
+        <p class="section-sub">
+          My approach: understand the business problem first, design the simplest architecture
+          that solves it, build it with your team so they can run it without me, and stay
+          accountable until it's live in production.
+        </p>
+      </div>
+      <div class="cert-list">
+        <div class="cert sme">
+          <span class="cert-icon">&#10022;</span>
+          <div>
+            <div class="cert-name">SnowPro Subject Matter Expert (SME)</div>
+            <div class="cert-issuer">Snowflake — invited expert; contributes to Snowflake's certification program</div>
+          </div>
+        </div>
+        <div class="cert">
+          <span class="cert-icon">&#127942;</span>
+          <div>
+            <div class="cert-name">SnowPro Advanced: Data Architect</div>
+            <div class="cert-issuer">Snowflake</div>
+          </div>
+        </div>
+        <div class="cert">
+          <span class="cert-icon">&#127942;</span>
+          <div>
+            <div class="cert-name">SnowPro Advanced: Data Engineer</div>
+            <div class="cert-issuer">Snowflake</div>
+          </div>
+        </div>
+        <div class="cert">
+          <span class="cert-icon">&#10004;</span>
+          <div>
+            <div class="cert-name">SnowPro Core</div>
+            <div class="cert-issuer">Snowflake</div>
+          </div>
+        </div>
+        <div class="cert">
+          <span class="cert-icon">&#9729;</span>
+          <div>
+            <div class="cert-name">Azure AI Engineer Associate</div>
+            <div class="cert-issuer">Microsoft</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section>
+  <div class="container" style="text-align:center">
+    <h2>Ready to build?</h2>
+    <p class="section-sub" style="margin:12px auto 28px">
+      Start with a free 15-minute intro call, or jump straight into a technical session.
+    </p>
+    <a class="btn btn-primary" href="#book">Book a Call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Jonathan Kelly — Data &amp; AI Consulting</div>
+    <div>Snowflake-centric · Cloud-agnostic · Azure-fluent</div>
+  </div>
+</footer>
+
+<!-- Booking modal -->
+<div class="modal-overlay" id="booking-modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">&times;</button>
+    <iframe id="booking-frame" src="about:blank" title="Book a call"></iframe>
+  </div>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/map.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
