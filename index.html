@@ -96,14 +96,14 @@
         </ul>
       </div>
       <div class="card">
-        <span class="icon">&#128640;</span>
-        <h3>End-to-End Product Delivery</h3>
-        <p>Take a data or AI product from idea to production: requirements, architecture, build, deployment, and handoff to your team.</p>
+        <span class="icon">&#128396;</span>
+        <h3>Streamlit Apps &amp; Human-in-the-Loop</h3>
+        <p>Streamlit apps that go beyond dashboards — they write back to the database, put humans inside AI workflows, and turn your warehouse into an operational system.</p>
         <ul>
-          <li>Greenfield platform builds</li>
-          <li>Migration to Snowflake</li>
-          <li>Architecture reviews</li>
-          <li>Team enablement &amp; handoff</li>
+          <li>Human-in-the-loop AI review &amp; approval UIs</li>
+          <li>Writeback apps: update, label, approve records</li>
+          <li>Snowflake-native Streamlit &amp; standalone deploys</li>
+          <li>Internal ops tools &amp; AI copilots</li>
         </ul>
       </div>
     </div>
@@ -196,6 +196,7 @@
       <button class="pattern-tab" data-panel="streaming">Streaming Ingest</button>
       <button class="pattern-tab" data-panel="rag">Enterprise AI / RAG</button>
       <button class="pattern-tab" data-panel="agents">Agentic Workflows</button>
+      <button class="pattern-tab" data-panel="hitl">Human-in-the-Loop</button>
     </div>
 
     <div class="pattern-panel active" id="panel-medallion">
@@ -358,6 +359,49 @@
         <p class="when"><strong>When it fits:</strong> analyst copilots, automated data quality pipelines, pipeline monitoring &amp; self-healing, customer-facing AI that acts — not just answers.</p>
       </div>
     </div>
+    <div class="pattern-panel" id="panel-hitl">
+      <div class="diagram">
+        <svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+          <defs><marker id="arr5" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#64759b"/></marker>
+          <marker id="arr5r" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 z" fill="#64759b"/></marker></defs>
+          <!-- AI Model box -->
+          <rect x="8" y="20" width="100" height="48" rx="8" fill="#f0ebff" stroke="#7c5cff"/>
+          <text x="58" y="40" fill="#6d4aef" font-size="10" text-anchor="middle" font-weight="600">AI Model /</text>
+          <text x="58" y="54" fill="#6d4aef" font-size="10" text-anchor="middle" font-weight="600">Agent Output</text>
+          <!-- Streamlit App (center, prominent) -->
+          <rect x="155" y="75" width="150" height="90" rx="10" fill="#e5f6fd" stroke="#29b5e8" stroke-width="2.5"/>
+          <text x="230" y="102" fill="#0e90c5" font-size="13" text-anchor="middle" font-weight="700">Streamlit</text>
+          <text x="230" y="118" fill="#0e90c5" font-size="13" text-anchor="middle" font-weight="700">Review App</text>
+          <text x="230" y="136" fill="#64759b" font-size="9" text-anchor="middle">approve · edit · reject · flag</text>
+          <text x="230" y="152" fill="#64759b" font-size="9" text-anchor="middle">full context, one click to act</text>
+          <!-- Human box -->
+          <rect x="352" y="20" width="100" height="48" rx="8" fill="#ffffff" stroke="#d9e1f2"/>
+          <text x="402" y="40" fill="#1d2942" font-size="11" text-anchor="middle">&#128100; Human</text>
+          <text x="402" y="56" fill="#64759b" font-size="9" text-anchor="middle">reviewer / operator</text>
+          <!-- Snowflake writeback -->
+          <rect x="155" y="193" width="150" height="40" rx="8" fill="#e5f6fd" stroke="#29b5e8"/>
+          <text x="230" y="209" fill="#0e90c5" font-size="10" text-anchor="middle" font-weight="600">Snowflake Write</text>
+          <text x="230" y="225" fill="#64759b" font-size="9" text-anchor="middle">decision logged · pipeline triggered</text>
+          <!-- Arrows: AI → Streamlit -->
+          <line x1="108" y1="44" x2="152" y2="100" stroke="#9aa9c9" marker-end="url(#arr5)"/>
+          <!-- Human ↔ Streamlit (bidirectional) -->
+          <line x1="352" y1="44" x2="308" y2="100" stroke="#9aa9c9" marker-end="url(#arr5)"/>
+          <line x1="305" y1="108" x2="350" y2="60" stroke="#9aa9c9" stroke-dasharray="3,3" marker-end="url(#arr5)"/>
+          <!-- Streamlit → Snowflake writeback -->
+          <line x1="230" y1="165" x2="230" y2="189" stroke="#29b5e8" stroke-width="2" marker-end="url(#arr5)"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Streamlit as the Human-in-the-Loop Layer</h3>
+        <p>
+          Streamlit apps aren't read-only dashboards — they're the interface where humans step inside
+          AI workflows. An agent generates a prediction or draft; the operator reviews it in a
+          purpose-built Streamlit UI; approval or correction writes back directly to Snowflake and
+          triggers the next step downstream.
+        </p>
+        <p class="when"><strong>When it fits:</strong> AI output review &amp; approval queues, data labeling &amp; annotation, model-assisted data correction, any workflow where a human decision needs to enter the database cleanly.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -375,14 +419,12 @@
       <div class="stack-item"><div class="name">Microsoft Azure</div><div class="role">ADF, ADLS, Functions, Event Hubs, Azure OpenAI</div></div>
       <div class="stack-item"><div class="name">Snowflake Cortex</div><div class="role">Cortex AI, Cortex Search, Cortex Analyst, Cortex Guard</div></div>
       <div class="stack-item"><div class="name">Python</div><div class="role">Pipelines, Snowpark, APIs, ML</div></div>
-      <div class="stack-item"><div class="name">Airflow / Dagster</div><div class="role">Orchestration &amp; scheduling</div></div>
+      <div class="stack-item"><div class="name">Streamlit</div><div class="role">Writeback apps, human-in-the-loop UIs, AI copilots, Snowflake-native &amp; standalone</div></div>
       <div class="stack-item"><div class="name">Fivetran / Airbyte</div><div class="role">Managed connector ingestion</div></div>
       <div class="stack-item"><div class="name">Kafka / Event Hubs</div><div class="role">Streaming &amp; CDC backbone</div></div>
       <div class="stack-item"><div class="name">Power BI / Tableau</div><div class="role">BI &amp; semantic layers</div></div>
       <div class="stack-item"><div class="name">Azure OpenAI / OpenAI</div><div class="role">LLMs, embeddings, agents</div></div>
-      <div class="stack-item"><div class="name">Terraform</div><div class="role">Infrastructure as code</div></div>
       <div class="stack-item"><div class="name">GitHub Actions / Azure DevOps</div><div class="role">CI/CD for data &amp; AI</div></div>
-      <div class="stack-item"><div class="name">Streamlit</div><div class="role">Data apps on Snowflake</div></div>
     </div>
   </div>
 </section>
