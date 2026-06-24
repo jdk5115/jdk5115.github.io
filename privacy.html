@@ -6,48 +6,48 @@
   <title>Privacy Policy — Sefermark</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; color: #1d2942; background: #fff; line-height: 1.7; }
-    nav { background: #0d1527; padding: 0 24px; position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; height: 60px; }
-    .logo { font-size: 1.25rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -0.5px; }
-    .logo span { color: #29b5e8; }
-    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-    .page-header { background: #f4f7fb; padding: 64px 24px 48px; text-align: center; }
+    .page-header { background: #f4f7fb; padding: 64px 24px 48px; text-align: center; border-bottom: 1px solid #e2e8f4; }
+    .page-header .eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0e90c5; margin-bottom: 12px; }
     .page-header h1 { font-size: 2rem; font-weight: 800; color: #1d2942; margin-bottom: 8px; }
     .page-header p { color: #64759b; font-size: 0.95rem; }
-    .content { padding: 56px 24px 80px; }
-    .content h2 { font-size: 1.15rem; font-weight: 700; color: #1d2942; margin: 36px 0 10px; }
-    .content h2:first-child { margin-top: 0; }
-    .content p { color: #3a4a6b; margin-bottom: 14px; font-size: 0.97rem; }
-    .content ul { margin: 0 0 14px 20px; color: #3a4a6b; font-size: 0.97rem; }
-    .content ul li { margin-bottom: 6px; }
-    a { color: #0e90c5; }
-    footer { background: #0d1527; color: #8494b4; padding: 28px 24px; font-size: 0.85rem; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .legal-content { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+    .legal-content h2 { font-size: 1.1rem; font-weight: 700; color: #1d2942; margin: 36px 0 10px; }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content p { color: #3a4a6b; margin-bottom: 14px; font-size: 0.97rem; line-height: 1.7; }
+    .legal-content ul { margin: 0 0 14px 20px; color: #3a4a6b; font-size: 0.97rem; line-height: 1.7; }
+    .legal-content ul li { margin-bottom: 6px; }
+    .legal-content a { color: #0e90c5; }
     .footer-links { display: flex; gap: 20px; }
-    .footer-links a { color: #8494b4; text-decoration: none; }
+    .footer-links a { color: #8494b4; text-decoration: none; font-size: 0.85rem; }
     .footer-links a:hover { color: #fff; }
   </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-inner">
+  <div class="container nav-inner">
     <a class="logo" href="/">Sefer<span>mark</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#demo">Live Demo</a></li>
+      <li><a href="/#patterns">Architecture</a></li>
+      <li><a href="/#stack">Stack</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
 <div class="page-header">
-  <div class="container">
-    <h1>Privacy Policy</h1>
-    <p>Effective date: June 23, 2026 &nbsp;·&nbsp; Sefermark LLC, Canfield, Ohio</p>
-  </div>
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>Effective date: June 23, 2026 &nbsp;·&nbsp; Sefermark LLC, Canfield, Ohio</p>
 </div>
 
-<div class="content">
-  <div class="container">
+<div class="legal-content">
 
     <h2>1. Overview</h2>
     <p>Sefermark LLC ("Sefermark," "we," "us," or "our") provides data engineering tools and Snowflake Native Applications. This Privacy Policy describes how we handle information in connection with our website and our products listed on the Snowflake Marketplace.</p>
@@ -93,18 +93,19 @@
       <a href="mailto:jonathan@sefermark.com">jonathan@sefermark.com</a>
     </p>
 
-  </div>
 </div>
 
 <footer>
-  <div class="footer-inner">
-    <div>© <script>document.write(new Date().getFullYear())</script> Sefermark LLC</div>
-    <div class="footer-links">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Sefermark LLC</div>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <span>Snowflake-centric · Cloud-agnostic · Azure-fluent</span>
+      <a href="/privacy.html" style="color:#8494b4;text-decoration:none;font-size:0.85rem">Privacy Policy</a>
+      <a href="/terms.html" style="color:#8494b4;text-decoration:none;font-size:0.85rem">Terms of Service</a>
     </div>
   </div>
 </footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
