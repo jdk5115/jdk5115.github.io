@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — Sefermark</title>
+  <meta name="description" content="Product documentation for Sefermark's Snowflake Native Applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .doc-hero { padding: 76px 0 44px; border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse 55% 60% at 80% 10%, rgba(41,181,232,.14), transparent),
+        radial-gradient(ellipse 45% 45% at 12% 95%, rgba(124,92,255,.12), transparent),
+        radial-gradient(ellipse 40% 40% at 96% 85%, rgba(236,77,155,.10), transparent); }
+    .doc-hero h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); margin-bottom: 12px; }
+    .doc-hero p { color: var(--text-dim); font-size: 1.08rem; max-width: 680px; }
+    .doc-body { max-width: 820px; margin: 0 auto; padding: 52px 24px 90px; }
+    .doc-body > p { color: var(--text-dim); font-size: 1rem; line-height: 1.75; margin-bottom: 26px; }
+    a.card { display: block; }
+    a.card:hover { text-decoration: none; }
+    a.card h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
+    a.card p { color: var(--text-dim); font-size: 0.95rem; }
+    a.card .arw { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="/">Sefer<span>mark</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#demo">Live Demo</a></li>
+      <li><a href="/#patterns">Architecture</a></li>
+      <li><a href="/#stack">Stack</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="doc-hero">
+  <div class="container">
+    <div class="eyebrow">Documentation</div>
+    <h1>Product Documentation</h1>
+    <p>Guides for Sefermark's Snowflake Native Applications. Each app runs entirely inside your own Snowflake account.</p>
+  </div>
+</header>
+
+<main class="doc-body">
+  <p>Documentation for products published by Sefermark LLC on the Snowflake Marketplace.</p>
+
+  <a class="card" href="/extraction-hub.html">
+    <h3>Extraction Hub <span class="arw">&rarr;</span></h3>
+    <p>Human-in-the-loop document extraction built on Snowflake Cortex. Install, setup, extraction, review, automation, and output reference.</p>
+  </a>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>&copy; <span id="year"></span> Sefermark LLC</div>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <span>Snowflake-centric &middot; Cloud-agnostic &middot; Azure-fluent</span>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

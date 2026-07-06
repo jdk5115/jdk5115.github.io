@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extraction Hub — Documentation | Sefermark</title>
+  <meta name="description" content="Documentation for Extraction Hub: human-in-the-loop document extraction on Snowflake Cortex. Install, grants, extraction, review, automation, and output objects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .doc-hero { padding: 76px 0 44px; border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse 55% 60% at 80% 10%, rgba(41,181,232,.14), transparent),
+        radial-gradient(ellipse 45% 45% at 12% 95%, rgba(124,92,255,.12), transparent),
+        radial-gradient(ellipse 40% 40% at 96% 85%, rgba(236,77,155,.10), transparent); }
+    .doc-hero h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); margin-bottom: 12px; }
+    .doc-hero p { color: var(--text-dim); font-size: 1.08rem; max-width: 700px; }
+    .doc-body { max-width: 820px; margin: 0 auto; padding: 48px 24px 90px; }
+    .doc-body h2 { font-size: 1.5rem; margin: 44px 0 14px; padding-left: 14px;
+      border-left: 3px solid transparent; border-image: var(--grad-135); border-image-slice: 1; }
+    .doc-body h2:first-child { margin-top: 0; }
+    .doc-body h3 { font-size: 1.05rem; margin: 26px 0 8px; color: var(--text); }
+    .doc-body p { color: var(--text-dim); margin-bottom: 14px; font-size: 1rem; line-height: 1.75; }
+    .doc-body ul { margin: 0 0 16px 20px; color: var(--text-dim); font-size: 1rem; line-height: 1.75; }
+    .doc-body ul li { margin-bottom: 6px; }
+    .doc-body strong { color: var(--text); }
+    .doc-body pre { background: #0f1a33; color: #e8edf9; padding: 16px 18px; border-radius: 12px;
+      overflow-x: auto; font-size: 0.84rem; line-height: 1.55; margin: 0 0 18px; border: 1px solid #1e2b4d; }
+    .doc-body pre code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: inherit; }
+    .doc-body :not(pre) > code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); padding: 1px 6px; border-radius: 6px; font-size: 0.88em; }
+    .doc-body table { width: 100%; border-collapse: collapse; margin: 0 0 18px; font-size: 0.92rem; }
+    .doc-body th, .doc-body td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--text-dim); vertical-align: top; }
+    .doc-body th { color: var(--text); font-weight: 700; }
+    .callout { background: linear-gradient(135deg, rgba(41,181,232,.09), rgba(124,92,255,.07) 55%, rgba(236,77,155,.05));
+      border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin: 0 0 20px; color: var(--text); font-size: 0.97rem; line-height: 1.65; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="/">Sefer<span>mark</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#demo">Live Demo</a></li>
+      <li><a href="/#patterns">Architecture</a></li>
+      <li><a href="/#stack">Stack</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="doc-hero">
+  <div class="container">
+    <div class="eyebrow">Documentation</div>
+    <h1>Extraction Hub</h1>
+    <p>Human-in-the-loop document extraction, built on Snowflake Cortex.</p>
+  </div>
+</header>
+
+<main class="doc-body">
+
+  <h2>Overview</h2>
+  <p>Extraction Hub turns documents into trusted, structured data inside your Snowflake account. Snowflake Cortex extracts the fields you describe in plain language, a person reviews each document side by side with its data, and approved results are written to a table in your account with reviewer and timestamp. Apps graduate from full review to automated pipelines where your team only handles exceptions.</p>
+  <div class="callout"><strong>Everything runs inside your Snowflake account using Snowflake Cortex.</strong> Your documents and extracted data never leave your account, the application makes no external network calls, and the provider never receives your data.</div>
+
+  <h2>Install and setup</h2>
+  <p>Install Extraction Hub from the Snowflake Marketplace listing, then open the <strong>Extraction Hub</strong> Streamlit from the app tile (pick a warehouse when prompted on first launch).</p>
+  <p>Grant the application access to Cortex, your document stage, and a results schema. Run these as <code>ACCOUNTADMIN</code> (replace the placeholders with your objects and the installed application name). The in-app <strong>Setup &amp; access</strong> panel shows these with your app name filled in, and <strong>Run diagnostics</strong> checks each grant and prints the exact fix for anything missing.</p>
+  <pre><code>-- Required: lets the app call Snowflake Cortex AI functions.
+-- (CORTEX_USER is a database role; the consumer grants it to the application -
+--  it cannot be requested in the app manifest.)
+GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO APPLICATION &lt;app_name&gt;;
+
+-- Let the app read your document stage:
+GRANT USAGE ON DATABASE &lt;db&gt; TO APPLICATION &lt;app_name&gt;;
+GRANT USAGE ON SCHEMA  &lt;db&gt;.&lt;schema&gt; TO APPLICATION &lt;app_name&gt;;
+GRANT READ  ON STAGE   &lt;db&gt;.&lt;schema&gt;.&lt;stage&gt; TO APPLICATION &lt;app_name&gt;;
+
+-- Let the app create and write its output table(s):
+GRANT USAGE, CREATE TABLE ON SCHEMA &lt;db&gt;.&lt;results_schema&gt; TO APPLICATION &lt;app_name&gt;;</code></pre>
+  <p>Five removable example apps (Finance, Operations, Purchasing, HR, Legal), each with a sample document, are preloaded so you can try the full workflow immediately.</p>
+
+  <h2>Create an extraction app</h2>
+  <p>Select <strong>New extraction app</strong>, point it at your document stage and an output table, and add the fields to extract. Each field is a name plus a plain-language question, for example "Invoice number" or "What is the total due?". Per field you can:</p>
+  <ul>
+    <li><strong>Extract a value</strong> - pull a value from the document.</li>
+    <li><strong>Categorize it</strong> - classify into categories you define.</li>
+    <li><strong>Gauge sentiment</strong> - positive / neutral / negative.</li>
+  </ul>
+  <p>Sharing one stage across several apps? Use the file-name filter so each app only sees its own files. No AI or function knowledge is required.</p>
+
+  <h2>Review documents</h2>
+  <p>The document appears next to an editable form laid out in reading order, with per-field confidence scores. Detected tables (like invoice line items) become editable grids. Correct anything, then mark it reviewed - the record locks, and every change lands in an append-only audit log. An explicit "Unlock to correct" step is required to change a reviewed record. The queue offers "To review / Skipped / All" views and advances to the next document on save.</p>
+
+  <h2>Automation and the maturity path</h2>
+  <p>Every app moves through three stages you control from the Admin Dashboard's Automation tab:</p>
+  <ul>
+    <li><strong>Review</strong> - people verify every document (the default).</li>
+    <li><strong>Assisted</strong> - confident documents are written automatically; the rest queue for review.</li>
+    <li><strong>Autopilot</strong> - straight-through processing; people only handle the Exceptions queue, where each document shows why it needs a look (low-confidence fields, empty result, or a failure).</li>
+  </ul>
+  <p>Promotion is evidence-based: the app measures how often the AI's extraction matched what your reviewers approved and tells you when an app is ready. Runs are on-demand today via <strong>Run now</strong>; scheduled runs arrive in a future release.</p>
+
+  <h2>Snowflake Cortex usage</h2>
+  <p>The app calls these Snowflake Cortex functions, all executed inside your account:</p>
+  <ul>
+    <li><code>AI_EXTRACT</code> - primary single-document extraction (values plus per-field confidence where supported).</li>
+    <li><code>AI_PARSE_DOCUMENT</code> - parses each document to text/layout (also used to detect tables).</li>
+    <li><code>AI_COMPLETE</code> - fallback and multi-record extraction. Default model: <code>snowflake-llama-3.3-70b</code>.</li>
+    <li><code>AI_CLASSIFY</code> - for fields configured as "Categorize it."</li>
+    <li><code>SENTIMENT</code> - for fields configured as "Gauge sentiment."</li>
+  </ul>
+  <p><strong>Regional availability:</strong> if <code>snowflake-llama-3.3-70b</code> is not hosted in your region, enable Snowflake cross-region inference once as <code>ACCOUNTADMIN</code> and extraction works normally:</p>
+  <pre><code>ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';
+-- (or a specific region group per your data-residency policy)</code></pre>
+  <p>Cortex usage consumes credits in your account. The app shows an estimated call count before bulk extraction, and admins can set budgets and rate limits in the Admin Dashboard.</p>
+
+  <h2>Output objects</h2>
+  <p>Each app writes to the output table you configure. Reserved columns added to every output table:</p>
+  <table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td>FILE_NAME</td><td>VARCHAR</td><td>Source document file name (stage basename).</td></tr>
+    <tr><td>&lt;your field columns&gt;</td><td>VARCHAR</td><td>One column per configured field. Extracted or corrected text.</td></tr>
+    <tr><td>IS_REVIEWED</td><td>BOOLEAN</td><td>TRUE once a human reviewed and approved the row.</td></tr>
+    <tr><td>REVIEWER_USERNAME</td><td>VARCHAR</td><td>Snowflake user who marked the row reviewed.</td></tr>
+    <tr><td>REVIEW_TIMESTAMP</td><td>TIMESTAMP_NTZ</td><td>When the row was marked reviewed.</td></tr>
+    <tr><td>PROCESSED_AT</td><td>TIMESTAMP_NTZ</td><td>When the row was written.</td></tr>
+    <tr><td>RECORD_ID</td><td>VARCHAR</td><td>Unique id per saved row.</td></tr>
+    <tr><td>SOURCE_APP</td><td>VARCHAR</td><td>Extraction app that produced the row.</td></tr>
+    <tr><td>STATUS</td><td>VARCHAR</td><td>approved, needs_review, auto_written, or flagged.</td></tr>
+    <tr><td>ORIGIN</td><td>VARCHAR</td><td>manual (human save) or pipeline (automated).</td></tr>
+    <tr><td>CONFIDENCE</td><td>FLOAT</td><td>Average AI confidence for the document (0-1).</td></tr>
+    <tr><td>EXCEPTION_REASON</td><td>VARCHAR</td><td>Why the pipeline sent the document to a human.</td></tr>
+  </table>
+  <p>Companion objects created per app:</p>
+  <ul>
+    <li><code>&lt;table&gt;_TYPED</code> - trusted analytics view (approved or confidently auto-written rows only; numbers and dates cast to real types). Point dashboards at this view.</li>
+    <li><code>&lt;table&gt;_TABLES</code> - one row per detected document table (line items).</li>
+    <li><code>CONFIG.AUDIT_LOG</code> - append-only log of every draft, review, and re-run with old and new values.</li>
+    <li><code>CONFIG.PIPELINES</code> / <code>CONFIG.PIPELINE_RUNS</code> - per-app automation config and run history.</li>
+    <li><code>CONFIG.USAGE_EVENTS</code> - per-extraction usage records powering the admin cost dashboard.</li>
+  </ul>
+
+  <h2>Free trial</h2>
+  <p>Marketplace trials include every feature for 30 days, capped at 100 documents (counting human-reviewed documents and documents processed by automation). The hub shows your usage; at the limit, reviewing and automation pause until purchase. Your apps, configuration, and data carry over unchanged when you purchase.</p>
+
+  <h2>Data handling</h2>
+  <ul>
+    <li>Documents are read from your stage and processed entirely within your Snowflake account; the app has no external network access and sends nothing to the provider.</li>
+    <li>The provider never receives your documents or extracted data.</li>
+    <li>Preloaded example documents are synthetic (no real personal data).</li>
+    <li>Per-group role settings control visibility in the app UI only - to truly restrict sensitive documents, also grant the underlying stage and output tables only to the appropriate roles in Snowflake.</li>
+  </ul>
+
+  <h2>Support</h2>
+  <p>For help or issues, contact <a href="mailto:jonathan@sefermark.com">jonathan@sefermark.com</a>. Target response time: within 3 business days.</p>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>&copy; <span id="year"></span> Sefermark LLC</div>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <span>Snowflake-centric &middot; Cloud-agnostic &middot; Azure-fluent</span>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
