@@ -35,6 +35,11 @@
     .doc-body th { color: var(--text); font-weight: 700; }
     .callout { background: linear-gradient(135deg, rgba(41,181,232,.09), rgba(124,92,255,.07) 55%, rgba(236,77,155,.05));
       border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin: 0 0 20px; color: var(--text); font-size: 0.97rem; line-height: 1.65; }
+    .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 8px 0 6px; }
+    .shots figure { margin: 0; }
+    .shots img { width: 100%; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); display: block; }
+    .shots figcaption { color: var(--text-dim); font-size: 0.9rem; margin-top: 8px; line-height: 1.5; }
+    @media (max-width: 600px) { .shots { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -67,6 +72,19 @@
   <h2>Overview</h2>
   <p>Extraction Hub turns documents into trusted, structured data inside your Snowflake account. Snowflake Cortex extracts the fields you describe in plain language, a person reviews each document side by side with its data, and approved results are written to a table in your account with reviewer and timestamp. Apps graduate from full review to automated pipelines where your team only handles exceptions.</p>
   <div class="callout"><strong>Everything runs inside your Snowflake account using Snowflake Cortex.</strong> Your documents and extracted data never leave your account, the application makes no external network calls, and the provider never receives your data.</div>
+
+  <h2>Screenshots</h2>
+  <div class="shots">
+    <figure><img src="img/extraction-hub/review.png" alt="Side-by-side human review" loading="lazy"><figcaption>Side-by-side review: the document beside its AI-extracted fields, each with a confidence score.</figcaption></figure>
+    <figure><img src="img/extraction-hub/architecture.png" alt="Runs inside your Snowflake account" loading="lazy"><figcaption>Everything runs inside your Snowflake account - no external calls, and the provider never sees your data.</figcaption></figure>
+    <figure><img src="img/extraction-hub/hub.png" alt="Extraction hub with many apps" loading="lazy"><figcaption>One hub, many extraction apps - each showing its current automation stage.</figcaption></figure>
+    <figure><img src="img/extraction-hub/maturity.png" alt="Maturity journey" loading="lazy"><figcaption>Three stages - Review, Assisted, Autopilot. The more you review, the less you have to.</figcaption></figure>
+    <figure><img src="img/extraction-hub/automation.png" alt="Automation agreement metrics" loading="lazy"><figcaption>Evidence-based promotion: the app measures AI-vs-reviewer agreement and tells you when an app is ready.</figcaption></figure>
+    <figure><img src="img/extraction-hub/exceptions.png" alt="Exceptions queue" loading="lazy"><figcaption>On Autopilot, people only handle the exceptions queue - each flagged with why.</figcaption></figure>
+    <figure><img src="img/extraction-hub/tables.png" alt="Detected tables become grids" loading="lazy"><figcaption>Detected tables, like invoice line items, become editable grids.</figcaption></figure>
+    <figure><img src="img/extraction-hub/cost.png" alt="Cost and usage dashboard" loading="lazy"><figcaption>Built-in cost controls: budgets, warehouse caps, rate limits, and a usage view.</figcaption></figure>
+    <figure><img src="img/extraction-hub/new-app.png" alt="No-code app builder" loading="lazy"><figcaption>No-code setup: describe each field in plain language and add validation.</figcaption></figure>
+  </div>
 
   <h2>Install and setup</h2>
   <p>Install Extraction Hub from the Snowflake Marketplace listing, then open the <strong>Extraction Hub</strong> Streamlit from the app tile (pick a warehouse when prompted on first launch).</p>
@@ -158,7 +176,7 @@ GRANT USAGE, CREATE TABLE ON SCHEMA &lt;db&gt;.&lt;results_schema&gt; TO APPLICA
   </ul>
 
   <h2>Support</h2>
-  <p>For help or issues, contact <a href="mailto:contact@sefermark.com">contact@sefermark.com</a>. Target response time: within 1 business day.</p>
+  <p>For help or issues, contact <a href="mailto:jonathan@sefermark.com">jonathan@sefermark.com</a>. Target response time: within 3 business days.</p>
 
 </main>
 
